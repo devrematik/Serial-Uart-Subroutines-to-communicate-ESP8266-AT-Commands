@@ -1,3 +1,8 @@
+/*
+* www.devrematik.com
+* Mustafa PATAN
+* 2019.11.30
+*/
 
 unsigned int send_esp_to_find(char* data_out,char* data_in,char* toFind, int32 timeout){
 int16 i;   
