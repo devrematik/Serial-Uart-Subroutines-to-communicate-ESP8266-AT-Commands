@@ -1,0 +1,16 @@
+
+unsigned int send_esp_to_find(char* data_out,char* data_in,char* toFind, int32 timeout){
+int16 i;   
+
+      i=0;
+      fputs(data_out,esp); 
+      while(timeout > 0){
+         if(!input(PIN_B0))   { data_in[i]=fgetc(esp);i++; }
+         timeout--;
+         delay_us(1);
+      }
+      if( i >= strlen(toFind) ) {
+         if(strstr(data_in,toFind)==NULL) return 0; else return 1;
+      }
+      else      return 0;
+}
